@@ -12,7 +12,7 @@ const data = [
         besoins des clients <br></br> - Planification de projets (méthodologie
         Scrum) <br></br>- Analyse des interfaces et propositions d'amélioration
         <br></br> Technologies utilisées: Html, Css, Javascript, Python, SQL,
-        React.js,
+        React
       </p>
     ),
   },
@@ -45,19 +45,23 @@ const data = [
 ];
 const Work = () => {
   return (
-    <div id='work' className='maw-w-[1040px] m-auto md:pl-20 p-4 py-16'>
+    <div id='work' className='max-w-[1040px] m-auto md:pl-20 p-4 py-16'>
       <h1 className='text-4xl font-bold text-center text-[#001b5e]'>
         Expériences professionnelles
       </h1>
-      {data.map((item, idx) => (
-        <WorkItem
-          key={idx}
-          year={item.year}
-          title={item.title}
-          duration={item.duration}
-          details={item.details}
-        />
-      ))}
+      <div className='flex flex-col md:flex-row justify-center my-10'>
+        <div className='w-full md:w-7/12'>
+          {data.map((item, idx) => (
+            <WorkItem
+              key={idx}
+              year={item.year}
+              title={item.title}
+              duration={item.duration}
+              details={item.details}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
